@@ -12,6 +12,18 @@ p {
 	font-size:1rem;
 }
 
+/*typography*/
+
+.section-title {
+	text-align:center;
+	text-transform: uppercase;
+	font-weight:600;
+	font-size:2.15rem;
+	margin-bottom:1.5rem;
+}
+
+/*nav*/
+
 .nav {
 	height:50px;
 	font-size:1.15rem;
@@ -21,6 +33,7 @@ p {
 
 	.logo, .logo:hover, .logo:active, .logo:visited { font-weight:300; text-decoration:none; color:#fff; }
 
+/*banner*/
 
 .banner {
 	background:#ccc;
@@ -30,13 +43,6 @@ p {
 }
 
 	.banner-inner {
-	}
-
-	.banner-title {
-		text-transform: uppercase;
-		font-weight:600;
-		font-size:2.15rem;
-		margin-bottom:1.5rem;
 	}
 
 	.banner-subtitle {
@@ -49,10 +55,22 @@ p {
 		margin-right:1rem;
 	}
 
+/*section*/
+
+.section {
+	margin-bottom:3rem;
+	padding:3rem 0;
+}
+
+/*calendar*/
+
+.calendar {
+	background:#ebebeb;
+	margin-bottom:0;
+	height:500px;
+}
 
 .footer {
-	position: absolute;
-	bottom:0;
 	width:100%;
 	font-size:0.9rem;
 }
