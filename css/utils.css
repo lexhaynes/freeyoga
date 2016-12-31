@@ -1,0 +1,44 @@
+/* FLEX */
+
+.flex-container {display:flex;}
+
+.flex-center {
+	align-items: center;  
+	justify-content: center;
+}
+
+.flex-vcenter {
+	align-items:center;
+}
+
+.flex-space-between {
+	justify-content: space-between;
+}
+
+.flex-space-around {
+	justify-content: space-around;
+}
+
+/* GRID */
+
+.grid-center {margin-left:auto; margin-right:auto;}
+
+.grid-100 {
+	width:100%;
+}
+
+.grid-90 {
+	width:90%;
+}
+
+.grid-80 {
+	width:80%;
+}
+
+.grid-75 {
+	width:75%;
+}
+
+.grid-50 {
+	width:50%;
+}

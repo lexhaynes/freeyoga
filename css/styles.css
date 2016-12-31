@@ -1,0 +1,58 @@
+html {
+	font-size:18px;
+}
+
+body {
+	font-family: "Open Sans";
+}
+
+/*Overrides*/
+
+p {
+	font-size:1rem;
+}
+
+.nav {
+	height:50px;
+	font-size:1.15rem;
+	background:#666;
+	color:#fff;
+}
+
+	.logo, .logo:hover, .logo:active, .logo:visited { font-weight:300; text-decoration:none; color:#fff; }
+
+
+.banner {
+	background:#ccc;
+	color:#fff;
+	height:450px;
+	text-align:center;
+}
+
+	.banner-inner {
+	}
+
+	.banner-title {
+		text-transform: uppercase;
+		font-weight:600;
+		font-size:2.15rem;
+		margin-bottom:1.5rem;
+	}
+
+	.banner-subtitle {
+		font-size:1.15rem;
+		font-weight:400;
+		margin-bottom:1.5rem;
+	}
+
+	.button-margin {
+		margin-right:1rem;
+	}
+
+
+.footer {
+	position: absolute;
+	bottom:0;
+	width:100%;
+	font-size:0.9rem;
+}
