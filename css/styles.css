@@ -13,6 +13,8 @@ p {
 	letter-spacing: 1.15px;
 }
 
+th, td {text-align:center;}
+
 /*Additional Button Styles*/
 
 .button-margin {
