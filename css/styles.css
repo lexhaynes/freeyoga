@@ -12,14 +12,48 @@ p {
 	font-size:1rem;
 }
 
+/*Additional Button Styles*/
+
+.button-margin {
+	margin-right:1rem;
+}
+
+.button-navigation {
+	/*border:none;*/
+}
+
+.button-icon {
+	border:none;
+	margin:0;
+	padding:0;
+	color:inherit;
+}
+
+.button-icon:hover,
+.button-icon:active,
+.button-icon:focus {
+	color:inherit;
+}
+
 /*typography*/
 
 .section-title {
 	text-align:center;
 	text-transform: uppercase;
 	font-weight:600;
-	font-size:2.15rem;
+	font-size:1.5rem;
 	margin-bottom:1.5rem;
+}
+
+/*input*/
+input[type="search"].input-plain {
+	display: inline;
+	padding:0;
+	margin:0 0 0 1rem;
+	background-color:transparent;
+	border:none;
+	border-radius:0;
+	border-bottom:solid #fff 2px;
 }
 
 /*nav*/
@@ -42,17 +76,14 @@ p {
 	text-align:center;
 }
 
-	.banner-inner {
+	.banner-title {
+		font-size:2.5rem;
 	}
 
 	.banner-subtitle {
 		font-size:1.15rem;
 		font-weight:400;
 		margin-bottom:1.5rem;
-	}
-
-	.button-margin {
-		margin-right:1rem;
 	}
 
 /*section*/

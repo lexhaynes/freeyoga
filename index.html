@@ -13,10 +13,11 @@
 	<!-- Skeleton -->
 	<link rel="stylesheet" href="https://lexhaynes.github.io/files/lib/skeleton-2.0.4/normalize.css">
 	<link rel="stylesheet" href="https://lexhaynes.github.io/files/lib/skeleton-2.0.4/skeleton.css">
+	<!-- Utils -->
+	<link rel="stylesheet" href="https://lexhaynes.github.io/files/custom/utils.css">
 	<!-- Styles -->
 	<link rel="stylesheet" href="css/mobile.css">
 	<link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" href="css/utils.css">
 </head>
 <body>
 	<nav class="nav flex-container flex-center">
@@ -25,14 +26,17 @@
 				<a href="#" class="logo">Yoga<strong>Community</strong></a>
 			</div>
 			<div class="nav-right">
-				<div class="search">[search]</div>
+				<div class="search">
+					<button class="button-icon fa fa-search"></button>
+					<!-- <input class="input-plain" type="search" placeholder="Search" id="searchInput"> -->
+				</div>
 			</div>
 		</div>
 	</nav>
 
 	<div class="banner flex-container flex-center">
 		 	<div class="banner-inner grid-90">
-				<div class="section-title">AFFORDABLE YOGA IN NYC</div>
+				<div class="banner-title section-title">AFFORDABLE YOGA IN NYC</div>
 				<h6 class="banner-subtitle">A calendar of <strong>free, donation-based, and low-cost</strong> yoga and meditation classes* in New York City. </h6>
 				<p>*<strong>Disclaimer: </strong>Check the studio’s schedule before attending a class. Class times, days, or prices may change!</p>
 				<div class="flex-container flex-center">
@@ -42,16 +46,21 @@
 			</div>
 	</div>
 
-	<div class="section today">
-		<div class="section-header">
+	<div class="section today grid-90 grid-center">
+		<div class="section-header flex-container flex-space-between">
+			<button class="button-navigation"><span class="fa fa-angle-double-left"></span> Yesterday</button>
 			<div class="section-title">Today's Classes</div>
+			<button class="button-navigation">Tomorrow <span class="fa fa-angle-double-right"></span></button>
 		</div>
-		
 	</div>
 	
 	<div class="section calendar">
-		<div class="section-header">
-			<div class="section-title">Calendar</div>
+		<div class="grid-90 grid-center">
+			<div class="section-header flex-container flex-space-between">
+				<button class="button-navigation"><span class="fa fa-angle-double-left"></span> Last Week</button>
+				<div class="section-title">January 2017</div>
+				<button class="button-navigation">Next Week <span class="fa fa-angle-double-right"></span></button>
+			</div>
 		</div>
 	</div>
 
