@@ -10,6 +10,7 @@ body {
 
 p {
 	font-size:1rem;
+	letter-spacing: 1.15px;
 }
 
 /*Additional Button Styles*/
@@ -43,6 +44,7 @@ p {
 	font-weight:600;
 	font-size:1.5rem;
 	margin-bottom:1.5rem;
+	letter-spacing: 2px;
 }
 
 /*input*/
@@ -84,6 +86,7 @@ input[type="search"].input-plain {
 		font-size:1.15rem;
 		font-weight:400;
 		margin-bottom:1.5rem;
+		letter-spacing: 1.15px;
 	}
 
 /*section*/
