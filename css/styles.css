@@ -15,7 +15,7 @@ p {
 
 strong {font-weight:900;}
 
-th, td {text-align:center; font-size:1.25rem;}
+th, td {text-align:center; font-size: 1.15rem; font-weight: 600;}
 
 /*Additional Button Styles*/
 
@@ -76,6 +76,7 @@ input[type="search"].input-plain {
 	.banner-title {
 		font-size:2.5rem !important;
 		margin-top:2rem;
+		text-transform: uppercase;
 	}
 
 	.banner-subtitle {
@@ -94,12 +95,12 @@ input[type="search"].input-plain {
 
 .section-title {
 	text-align:center;
-	text-transform: uppercase;
 	font-weight:600;
 	font-size:1.5rem;
 	margin-bottom:1.5rem;
 	letter-spacing: 2px;
 	font-weight:700;
+	font-family: "Domine";
 }
 
 .section-content {
