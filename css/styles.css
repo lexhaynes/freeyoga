@@ -183,12 +183,17 @@ input[type="search"].input-plain {
 	.class-location:active,
 	.class-location:focus { color:inherit; text-decoration: underline}
 
+/*slider*/
+
+.slider { overflow:hidden; }
+
 /*calendar*/
 
 .calendar {
 	background:#ebebeb;
 	margin-bottom:0;
 	height:500px;
+	font-size:1rem;
 }
 
 	.day { line-height:1rem; }
