@@ -91,7 +91,7 @@ button.button-primary:focus {
 
 
 /*input*/
-input[type="search"].input-plain {
+/*input[type="search"].input-plain {
 	display: inline;
 	padding:0;
 	margin:0 0 0 1rem;
@@ -99,9 +99,11 @@ input[type="search"].input-plain {
 	border:none;
 	border-radius:0;
 	border-bottom:solid #fff 2px;
-}
+}*/
 
 /*nav*/
+
+/*this is being used on some public pages */
 
 .nav {
 	height:60px;
@@ -160,7 +162,7 @@ input[type="search"].input-plain {
 
 /*class box*/
 
-.classbox {
+/*.classbox {
 	background:#444;
 	border-bottom: solid #09c5aa 6px;
 	padding:1rem;
@@ -192,7 +194,7 @@ input[type="search"].input-plain {
 	.class-location:hover,
 	.class-location:active,
 	.class-location:focus { color:inherit; text-decoration: underline}
-
+*/
 /*slider*/
 
 .slider { overflow:hidden; }
@@ -213,6 +215,7 @@ input[type="search"].input-plain {
 	font-size:0.8rem;
 	height:40px;
 	color:#fff;
+	background:#333;
 }
 
 	.footer-bottom {

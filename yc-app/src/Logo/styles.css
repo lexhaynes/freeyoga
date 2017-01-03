@@ -1,0 +1,6 @@
+.logo, 
+.logo:hover, 
+.logo:active, 
+.logo:visited { 
+	font-weight:300; text-decoration:none; color:#fff; 
+}

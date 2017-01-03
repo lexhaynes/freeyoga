@@ -1,5 +1,9 @@
 /*Button Styles*/
 
+button {
+	cursor:pointer !important;
+}
+
 button.button-primary {
 	background:#09c5aa;
 	border:solid #09c5aa 1px;
