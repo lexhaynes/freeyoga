@@ -4,6 +4,8 @@ html {
 
 body {
 	font-family: "Open Sans";
+	padding:0;
+	margin:0;
 }
 
 /*Overrides*/
@@ -21,6 +23,12 @@ td, th {
 	border-bottom: none;
 }
 
+a {cursor:pointer;}
+a:hover,
+a:active,
+a:focus {
+	color:#09c5aa;
+}
 /*Additional Button Styles*/
 
 button.button-primary {
@@ -58,11 +66,11 @@ button.button-primary:focus {
 
 .button-floating {
 	position:fixed;
-	bottom:80px;
-	right:50px;
-	width:60px;
-	height:60px;
-	border-radius:60px;
+	bottom:90px;
+	right:30px;
+	width:50px;
+	height:50px;
+	border-radius:50px;
 	border:none;
 	background:#09c5aa;
 	color:#fff;
@@ -72,7 +80,7 @@ button.button-primary:focus {
 	margin:0;
 }
 
-	.button-floating.top { bottom:160px; }
+	.button-floating.top { bottom:150px; }
 
 	.button-floating:hover,
 	.button-floating:active,
@@ -100,6 +108,8 @@ input[type="search"].input-plain {
 	font-size:1.15rem;
 	color:#fff;
 }
+
+	.nav-dark { background:#333; }
 
 	.logo, .logo:hover, .logo:active, .logo:visited { font-weight:300; text-decoration:none; color:#fff; }
 
@@ -152,7 +162,7 @@ input[type="search"].input-plain {
 
 .classbox {
 	background:#444;
-	border-top: solid #09c5aa 6px;
+	border-bottom: solid #09c5aa 6px;
 	padding:1rem;
 	border-radius:4px;
 	color:#fff;
@@ -200,9 +210,18 @@ input[type="search"].input-plain {
 
 .footer {
 	width:100%;
-	font-size:0.9rem;
-	background:#333;
+	font-size:0.8rem;
+	height:40px;
+	color:#fff;
 }
+
+	.footer-bottom {
+		position: absolute;
+		bottom:0;
+	}
+
+	.footer-link  {color:inherit; padding:0 0.5rem; text-decoration:none;}
+	.footer-link-selected {color:#09c5aa; padding:0 0.5rem;}
 
 	.copyright {
 		padding-left:1rem;
