@@ -4,6 +4,8 @@ html {
 
 body {
 	font-family: "Open Sans";
+	padding:0;
+	margin:0;
 }
 
 /*Overrides*/
@@ -21,6 +23,12 @@ td, th {
 	border-bottom: none;
 }
 
+a {cursor:pointer;}
+a:hover,
+a:active,
+a:focus {
+	color:#09c5aa;
+}
 /*Additional Button Styles*/
 
 button.button-primary {
@@ -101,6 +109,8 @@ input[type="search"].input-plain {
 	color:#fff;
 }
 
+	.nav-dark { background:#333; }
+
 	.logo, .logo:hover, .logo:active, .logo:visited { font-weight:300; text-decoration:none; color:#fff; }
 
 /*banner*/
@@ -152,7 +162,7 @@ input[type="search"].input-plain {
 
 .classbox {
 	background:#444;
-	border-top: solid #09c5aa 6px;
+	border-bottom: solid #09c5aa 6px;
 	padding:1rem;
 	border-radius:4px;
 	color:#fff;
@@ -200,9 +210,18 @@ input[type="search"].input-plain {
 
 .footer {
 	width:100%;
-	font-size:0.9rem;
-	background:#333;
+	font-size:0.8rem;
+	height:40px;
+	color:#fff;
 }
+
+	.footer-bottom {
+		position: absolute;
+		bottom:0;
+	}
+
+	.footer-link  {color:inherit; padding:0 0.5rem; text-decoration:none;}
+	.footer-link-selected {color:#09c5aa; padding:0 0.5rem;}
 
 	.copyright {
 		padding-left:1rem;
