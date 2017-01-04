@@ -31,7 +31,7 @@ class ClassesToday extends Component {
 	}
 
 	/*
-	 * checks props.data for classes happening today and adds them to the state.currentClasses array by time slot
+	 * checks props.data for classes happening today and adds them to the state.currentClasses object by time slot
 	*/	
 	setCurrentClasses(currentDay) {
 		// functional syntax equivalent to the above.
@@ -58,7 +58,7 @@ class ClassesToday extends Component {
 	}
 
 	/*
-	 * returns an array of timeslots + classes (as ClassBox) in that slot
+	 * returns an array of timeslots + classes (as ClassBox),
 	 * where index[0] is the timeslot, and index[1] is an array of classes
 	*/	
 	displayCurrentClasses() {
