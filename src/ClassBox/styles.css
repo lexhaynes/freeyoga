@@ -1,11 +1,12 @@
 .classbox {
 	background:#444;
-	border-bottom: solid #09c5aa 6px;
-	padding:1rem;
+	border-top: solid #09c5aa 5px;
+	padding:1rem 1rem 1.5rem 1rem;
 	border-radius:4px;
 	color:#fff;
 	text-align:left;
 	font-size:1rem;
+	letter-spacing: 1px;
 }
 
 	.class-title {
@@ -18,15 +19,45 @@
 	}
 
 	.class-teacher {
-		font-weight:400;
+		font-weight:300;
 	}
 
 	.class-location {
-		font-weight:600;
-		color:inherit;
+		font-weight: 600;
+    	color: #09c5aa;
+    	text-decoration: none;
+    	display: block; 
 	}	
 
 	.class-location:hover,
 	.class-location:active,
 	.class-location:focus {text-decoration: underline}
 
+.label {color:#fff; padding-right:0.5rem;}
+
+/*animations*/
+.animate {
+    -webkit-animation: appear 1s;
+    -moz-animation: appear 1s;
+    -o-animation: appear 1s;
+    animation: appear 0.3s ease-in;
+    opacity:1;
+  
+}
+@keyframes appear {
+    0% {
+        opacity: 0;
+    } 
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes appear {
+   
+}
+@-moz-keyframes appear {
+   
+}
+@-o-keyframes appear {
+    
+}

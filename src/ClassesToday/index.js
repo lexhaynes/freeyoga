@@ -67,11 +67,11 @@ class ClassesToday extends Component {
   			return ([key, _this.state.currentClasses[key].map(function(item) {
 				return (
 					<ClassBox key={item.id}
-						type="today"
-				  		classTitle={item.className}
-				  		classTime={item.classStart}
-				  		classTeacher={item.teacher}   
-				  		classLocation={item.studio}
+				  		title={item.className}
+				  		start={item.classStart}
+				  		end={item.classEnd}
+				  		teacher={item.teacher}   
+				  		location={item.studio}
 				  		coords={item.coords}
 				  		url={item.scheduleLink}
 					 />)
