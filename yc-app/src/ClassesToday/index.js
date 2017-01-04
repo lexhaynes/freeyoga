@@ -19,7 +19,7 @@ class ClassesToday extends Component {
 	      	currentClassTimes: []
 	    };
 
-	    this.displayCurrentClasses = this.displayCurrentClasses.bind(this);
+	   this.displayCurrentClasses = this.displayCurrentClasses.bind(this);
 	    this.setCurrentClasses = this.setCurrentClasses.bind(this);
 	    this.nextDay = this.nextDay.bind(this);
 	    this.prevDay = this.prevDay.bind(this);
@@ -30,6 +30,9 @@ class ClassesToday extends Component {
 		this.setCurrentClasses(this.state.currentDay);
 	}
 
+	/*
+	 * checks props.data for classes happening today and adds them to the state.currentClasses array by time slot
+	*/	
 	setCurrentClasses(currentDay) {
 		// functional syntax equivalent to the above.
 		// ensures we don't get empty values in state.currentClasses array
@@ -38,7 +41,7 @@ class ClassesToday extends Component {
 			.map( (item, i) => item );*/
 		let currentClasses = {};
 
-		for (var i = 0; i < this.props.data.length; i++) {
+		for (let i = 0; i < this.props.data.length; i++) {
 			let item = this.props.data[i];
 			if (item.day === days[currentDay]) {
 				if (!(item.classStart in currentClasses))
@@ -54,22 +57,24 @@ class ClassesToday extends Component {
 		});
 	}
 
+	/*
+	 * returns an array of timeslots + classes (as ClassBox) in that slot
+	 * where index[0] is the timeslot, and index[1] is an array of classes
+	*/	
 	displayCurrentClasses() {
 		let _this = this;
 		return Object.keys(this.state.currentClasses).map(function(key) {
-  			let timeBlock = _this.state.currentClasses[key];
-  			return timeBlock.map(function(item) {
+  			return ([key, _this.state.currentClasses[key].map(function(item) {
 				return (
-					<div>
-					<h1>{item.classStart}</h1>
 					<ClassBox key={item.id}
 				  		classTitle={item.className}
 				  		classTime={item.classStart}
 				  		classTeacher={item.teacher}   
 				  		classLocation={item.studio}
-					 />
-					 </div>)
-			});
+					 />)
+				})
+  			])
+			
   		});
 	}
 
@@ -99,7 +104,7 @@ class ClassesToday extends Component {
 						<span className="fa fa-angle-double-left"></span> Yesterday
 					</Button>
 
-					<div className="section-title"><span className="text-capitalize">{days[this.state.currentDay]}'s</span> Classes</div>
+					<div className="section-title"><span className="text-capitalize">{days[this.state.currentDay]}</span> Classes</div>
 
 					<Button className="button-navigation" onClick={this.nextDay}>
 						Tomorrow <span className="fa fa-angle-double-right"></span>
