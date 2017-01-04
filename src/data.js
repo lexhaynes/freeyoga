@@ -2360,7 +2360,7 @@ export default [
    "neighborhood": "Bushwick",
    "day": "wednesday",
    "classStart": "21:15",
-   "classEnd": "9:45",
+   "classEnd": "21:45",
    "teacher": "Jen MacFarlane",
    "price": null,
    "scheduleLink": "http://dayayogastudio.com/"
@@ -2373,7 +2373,7 @@ export default [
    "borough": "manhattan",
    "neighborhood": "Harlem",
    "day": "friday",
-   "classStart": "22:45",
+   "classStart": "20:45",
    "classEnd": "12:15",
    "teacher": "Nyota Nayo",
    "price": null,
