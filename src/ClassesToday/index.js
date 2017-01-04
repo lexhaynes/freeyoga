@@ -103,7 +103,7 @@ class ClassesToday extends Component {
 		return (
 			<div className="section today grid-90 grid-center">
 
-				<div className="section-header grid-50 grid-center flex-container flex-space-between">
+				<div className="section-header grid-75 grid-center flex-container flex-space-between">
 					<Button className="button-navigation" onClick={this.prevDay}>
 						<span className="fa fa-angle-double-left"></span> Yesterday
 					</Button>
