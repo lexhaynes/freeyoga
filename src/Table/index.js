@@ -1,19 +1,17 @@
 import React from 'react';
+import moment from 'moment';
 import './styles.css';
-
-function friendlyTime(time) {
-	let friendly = time;
-	
-	return friendly;
-}
 
 export default function Table(props) {
 	const { className, data } = props;
 	let rendered = data();
 	let parsed = rendered.map(function(timeslot, i) {
+		console.log(timeslot[0].replace(/:/g,''));
 		return (
 			<div className="flex-container row" key={i}>
-				<div className="timeslot">{friendlyTime(timeslot[0])}</div>
+				<div className="timeslot">
+					{moment(timeslot[0].replace(/:/g,''), "hmm").format("h:mm a") }
+				</div>
 				<div className="flex-container grid-100">
 				{ timeslot[1].map(function(item, i) {
 					return <div className="grid-100" key={i}>{item}</div>

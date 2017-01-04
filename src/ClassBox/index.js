@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.css';
+import moment from 'moment';
 
 export default function ClassBox(props) {
 	const {title, start, end, teacher, location, hood, coords, url } = props;
@@ -12,7 +13,7 @@ export default function ClassBox(props) {
 
 	  		<div className="class-field"><strong className="label">Neighborhood :</strong> {hood}</div>
 
-	  		<div className="class-field"><strong className="label">Class Duration :</strong>{start} - {end}</div>
+	  		<div className="class-field"><strong className="label">Class Duration :</strong>{moment(start.replace(/:/g,''), "hmm").format("h:mm a")} - {moment(end.replace(/:/g,''), "hmm").format("h:mm a")}</div>
 
 	  		<div className="class-field"><strong className="label">Teacher :</strong>  {teacher}</div>
 
