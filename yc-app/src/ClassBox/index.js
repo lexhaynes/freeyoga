@@ -14,7 +14,7 @@ export default function ClassBox(props) {
 	  	:
 		//if the component type is 'calendar' section
 		<div className="classbox">
-  			<div className="class-title">{classTitle}</div>
+  			<div className="class-title text-capitalize">{classTitle}</div>
 	  		<div className="class-time">{classTime}</div>
 	  		<div className="class-teacher">{classTeacher}</div>
 	  		<a href="#" className="class-location">{classLocation}</a>

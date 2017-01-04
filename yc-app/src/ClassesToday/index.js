@@ -16,40 +16,61 @@ class ClassesToday extends Component {
 	    this.state = {
 	    	currentDay: date.getDay(),
 	      	currentClasses: [],
+	      	currentClassTimes: []
 	    };
-	    this.getTodaysClasses = this.getTodaysClasses.bind(this);
-	    this.getCurrentClasses = this.getCurrentClasses.bind(this);
+
+	    this.displayCurrentClasses = this.displayCurrentClasses.bind(this);
+	    this.setCurrentClasses = this.setCurrentClasses.bind(this);
 	    this.nextDay = this.nextDay.bind(this);
 	    this.prevDay = this.prevDay.bind(this);
 	}
 
 	componentDidMount() {
 		//fetch data here in the future
-		this.getCurrentClasses(this.state.currentDay);
+		this.setCurrentClasses(this.state.currentDay);
 	}
 
-	getCurrentClasses(currentDay) {
+	setCurrentClasses(currentDay) {
 		// functional syntax equivalent to the above.
 		// ensures we don't get empty values in state.currentClasses array
-		let currentClasses = this.props.data
+	/*	let currentClasses = this.props.data
 			.filter( item => item.day === days[currentDay] )
-			.map( (item, i) => item );
-	
+			.map( (item, i) => item );*/
+		let currentClasses = {};
+
+		for (var i = 0; i < this.props.data.length; i++) {
+			let item = this.props.data[i];
+			if (item.day === days[currentDay]) {
+				if (!(item.classStart in currentClasses))
+					currentClasses[item.classStart] = new Array(item);
+				else {
+					currentClasses[item.classStart].push(item);
+				}
+			}
+		}
+
 		this.setState({
 			'currentClasses': currentClasses,
 		});
 	}
 
-	getTodaysClasses() {
+	displayCurrentClasses() {
 		let _this = this;
-		return this.state.currentClasses.map(function(item, i) {
-			return (<ClassBox key={i}
-		  		classTitle={item.className}
-		  		classTime={item.classStart}
-		  		classTeacher={item.teacher} 
-		  		classLocation={item.studio}
-			 />)
-		});
+		return Object.keys(this.state.currentClasses).map(function(key) {
+  			let timeBlock = _this.state.currentClasses[key];
+  			return timeBlock.map(function(item) {
+				return (
+					<div>
+					<h1>{item.classStart}</h1>
+					<ClassBox key={item.id}
+				  		classTitle={item.className}
+				  		classTime={item.classStart}
+				  		classTeacher={item.teacher}   
+				  		classLocation={item.studio}
+					 />
+					 </div>)
+			});
+  		});
 	}
 
 	nextDay() {
@@ -57,14 +78,14 @@ class ClassesToday extends Component {
 		this.setState({
 			'currentDay': nextDay
 		});
-		this.getCurrentClasses(nextDay);
+		this.setCurrentClasses(nextDay);
 	}	
 	prevDay() {
 		let prevDay = this.state.currentDay === 0 ? 6 : this.state.currentDay - 1;
 		this.setState({
 			'currentDay': prevDay
 		});
-		this.getCurrentClasses(prevDay);
+		this.setCurrentClasses(prevDay);
 	}
 
 	render() {
@@ -78,7 +99,7 @@ class ClassesToday extends Component {
 						<span className="fa fa-angle-double-left"></span> Yesterday
 					</Button>
 
-					<div className="section-title"> {this.state.currentDay} <span className="title-day">{days[this.state.currentDay]}'s</span> Classes</div>
+					<div className="section-title"><span className="text-capitalize">{days[this.state.currentDay]}'s</span> Classes</div>
 
 					<Button className="button-navigation" onClick={this.nextDay}>
 						Tomorrow <span className="fa fa-angle-double-right"></span>
@@ -89,7 +110,7 @@ class ClassesToday extends Component {
 				<div className="section-content slider">
 					<Table
 						className="grid-100 grid-center"
-						data={this.getTodaysClasses}  
+						data={this.displayCurrentClasses}  
 					/>
 				</div>
 			</div>
