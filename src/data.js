@@ -559,6 +559,20 @@ export default [
    "price": null,
    "scheduleLink": "http://www.yoga216.com/schedule/"
  },
+{
+   "id": 91,
+   "className": "Community Prenatal",
+   "studio": "Harlem Yoga Studio",
+   "coords": "40.7788136,-73.9555111",
+   "borough": "manhattan",
+   "neighborhood": "Harlem",
+   "day": "friday",
+   "classStart": "10:45",
+   "classEnd": "12:15",
+   "teacher": "Nyota Nayo",
+   "price": null,
+   "scheduleLink": "http://harlemyogastudio.com/schedule/"
+ },
  {
    "id": 8,
    "className": "Community Class",
@@ -2364,19 +2378,5 @@ export default [
    "teacher": "Jen MacFarlane",
    "price": null,
    "scheduleLink": "http://dayayogastudio.com/"
- },
- {
-   "id": 91,
-   "className": "Community Prenatal",
-   "studio": "Harlem Yoga Studio",
-   "coords": "40.7788136,-73.9555111",
-   "borough": "manhattan",
-   "neighborhood": "Harlem",
-   "day": "friday",
-   "classStart": "20:45",
-   "classEnd": "12:15",
-   "teacher": "Nyota Nayo",
-   "price": null,
-   "scheduleLink": "http://harlemyogastudio.com/schedule/"
  }
 ]
