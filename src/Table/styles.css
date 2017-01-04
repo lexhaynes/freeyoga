@@ -1,11 +1,12 @@
 .timeslot {
 	text-align:center; 
-	font-size: 1.75rem; 
-	font-weight: 700; 
+	font-size: 1.5rem; 
+	font-weight: 600; 
 	letter-spacing: 1px; 
 	margin-right:2rem;
 	color:#000;
 	width:100px;
+	font-family:"Domine";
 	align-self:center;
 }
 
