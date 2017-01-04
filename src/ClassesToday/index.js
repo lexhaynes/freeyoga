@@ -72,6 +72,7 @@ class ClassesToday extends Component {
 				  		end={item.classEnd}
 				  		teacher={item.teacher}   
 				  		location={item.studio}
+				  		hood={item.neighborhood}
 				  		coords={item.coords}
 				  		url={item.scheduleLink}
 					 />)
