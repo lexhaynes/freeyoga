@@ -11,6 +11,7 @@ class App extends Component {
       <div className="app">
         <Banner></Banner>
         <ClassesToday data={data} />
+     
       </div>
     );
   }
