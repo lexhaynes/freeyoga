@@ -115,6 +115,7 @@ class ClassesToday extends Component {
 					</Button>
 
 				</div>
+				
 
 				<div className="section-content slider">
 					<Table
