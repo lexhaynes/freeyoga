@@ -5,33 +5,18 @@ export default function Table(props) {
 	const { className, data } = props;
 	let rendered = data();
 	let parsed = rendered.map(function(timeslot, i) {
-		//console.log(timeslot)
-		/*return <tr key={i}>
-				<th>{timeslot[0]}</th>
-				{ timeslot[1].map(function(item, i) {
-					return <td key={i}>{item}</td>
-				})
-				}
-				</tr>	*/
 		return (
-			<div className="flex-container" key={i}>
-				<strong>{timeslot[0]}</strong>
-				<div className="flex-container">
+			<div className="flex-container row" key={i}>
+				<div className="timeslot">{timeslot[0]}</div>
+				<div className="flex-container grid-100">
 				{ timeslot[1].map(function(item, i) {
-					return <span key={i}>{item}</span>
+					return <div className="grid-100" key={i}>{item}</div>
 				})
 				}
 				</div>
 			</div>
 		)
 	});
-	/*return (
-		<table className={className}>
-			  <tbody>
-			     {parsed} 
-			  </tbody>
-		</table>
-	)*/
 	return (
 		<div className={className}>
 			{parsed}
