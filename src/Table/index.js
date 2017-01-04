@@ -17,9 +17,7 @@ export default function Table(props) {
 	return (
 		<table className={className}>
 			  <tbody>
-	
-			     {parsed}
-			      
+			     {parsed} 
 			  </tbody>
 		</table>
 	)
