@@ -1,0 +1,63 @@
+/*Button Styles*/
+
+button {
+	cursor:pointer !important;
+}
+
+button.button-primary {
+	background:#09c5aa;
+	border:solid #09c5aa 1px;
+}
+
+button.button-primary:hover,
+button.button-primary:active,
+button.button-primary:focus {
+	background:#09b9a0;
+	border:solid #09b9a0 1px;
+}
+
+.button-margin {
+	margin-right:1rem;
+}
+
+.button-navigation {
+	
+}
+
+.button-icon {
+	border:none;
+	margin:0;
+	padding:0;
+	color:inherit;
+}
+
+.button-icon:hover,
+.button-icon:active,
+.button-icon:focus {
+	color:inherit;
+}
+
+.button-floating {
+	position:fixed;
+	bottom:90px;
+	right:30px;
+	width:50px;
+	height:50px;
+	border-radius:50px;
+	border:none;
+	background:#09c5aa;
+	color:#fff;
+	font-size:1.5rem;
+	text-align:center;
+	padding:0;
+	margin:0;
+}
+
+	.button-floating.top { bottom:150px; }
+
+	.button-floating:hover,
+	.button-floating:active,
+	.button-floating:focus {
+		color:#fff;
+		background:#09b9a0;
+	}
