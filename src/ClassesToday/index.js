@@ -16,13 +16,15 @@ class ClassesToday extends Component {
 	    this.state = {
 	    	currentDay: date.getDay(),
 	      	currentClasses: [],
-	      	currentClassTimes: []
+	      	currentClassTimes: [],
+	      	currentTime: 
 	    };
 
-	   this.displayCurrentClasses = this.displayCurrentClasses.bind(this);
+	   	this.displayCurrentClasses = this.displayCurrentClasses.bind(this);
 	    this.setCurrentClasses = this.setCurrentClasses.bind(this);
 	    this.nextDay = this.nextDay.bind(this);
 	    this.prevDay = this.prevDay.bind(this);
+	    this.hidePassedClasses = this.hidePassedClasses.bind(this);
 	}
 
 	componentDidMount() {
@@ -95,6 +97,9 @@ class ClassesToday extends Component {
 			'currentDay': prevDay
 		});
 		this.setCurrentClasses(prevDay);
+	}
+	hidePassedClasses() {
+
 	}
 
 	render() {
