@@ -6,7 +6,6 @@ export default function Table(props) {
 	const { className, data } = props;
 	let rendered = data();
 	let parsed = rendered.map(function(timeslot, i) {
-		console.log(timeslot[0].replace(/:/g,''));
 		return (
 			<div className="flex-container row" key={i}>
 				<div className="timeslot">
