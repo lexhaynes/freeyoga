@@ -6,9 +6,35 @@
 	color:#000;
 	width:200px;
 	font-family:"Domine";
-	align-self:center;
+	align-self:flex-start;
+	margin-top:1rem;
 }
 
 .row {
-	margin-bottom:2rem
+	margin-bottom:2rem;
+}
+
+
+.flex-wrap {
+	flex-wrap:wrap;
+}
+
+.flex-25, .flex-50, .flex-100  {
+	margin-bottom:1rem;
+}
+
+.flex-100 {
+	flex-basis:100%;
+}
+
+.flex-50 {
+	flex-basis:50%;
+}
+
+.flex-25 {
+	flex-basis:25%;
+}
+
+.flex-wrap:nth-child(3n) {
+    flex-basis: 100%;
 }
