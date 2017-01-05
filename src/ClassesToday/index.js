@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment-timezone'
 import Button from '../Button'
 import ClassBox from '../ClassBox'
 import Table from '../Table'
@@ -7,6 +8,8 @@ import './styles.css';
 
 var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 var date = new Date();
+var nyTime = moment().tz("America/New_York").format("hh:mm");
+var userTime = moment().format("hh:mm");
 
 class ClassesToday extends Component {
 
@@ -17,7 +20,8 @@ class ClassesToday extends Component {
 	    	currentDay: date.getDay(),
 	      	currentClasses: [],
 	      	currentClassTimes: [],
-	      	currentTime: 
+	      	currentTime: nyTime,
+	      	userTime: userTime,
 	    };
 
 	   	this.displayCurrentClasses = this.displayCurrentClasses.bind(this);
@@ -98,13 +102,31 @@ class ClassesToday extends Component {
 		});
 		this.setCurrentClasses(prevDay);
 	}
-	hidePassedClasses() {
+	/*hide classes whose start tines have passed*/
+	hidePassedClasses(current) {
+		let times = Object.keys(current).map(function(key) {
+			//return key.replace(/:/g, '');
+			return key;
+		});
+		let _this = this;
 
+		let hidden = Object.keys(current).reduce(function(result, key) {
+			//compare current time to key. if it is less, return
+			var timeBlock = Number(key.replace(/:/g, ''));
+			var currentTime = Number(_this.state.currentTime.replace(/:/g, ''));
+			if (timeBlock <= currentTime) {
+				result.push(key);
+			} 
+			return result;
+		}, [])
+
+		return hidden.map(function(key) {
+			return _this.state.currentClasses[key];
+		});
 	}
 
 	render() {
-		//this.parseData();
-
+	
 		return (
 			<div className="section today grid-90 grid-center">
 
