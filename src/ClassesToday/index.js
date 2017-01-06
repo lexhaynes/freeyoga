@@ -71,10 +71,8 @@ class ClassesToday extends Component {
 		let _this = this;
 		return Object.keys(this.state.currentClasses).map(function(key) {
   			return ([key, _this.state.currentClasses[key].map(function(item) {
-  				let isHidden = _this.isClassOver(item.classStart) ? "hidden" : "visible";
 				return (
 					<ClassBox key={item.id}
-						hidden={isHidden}
 				  		title={item.className}
 				  		start={item.classStart}
 				  		end={item.classEnd}
@@ -109,25 +107,6 @@ class ClassesToday extends Component {
 		var now = Number(moment().format("Hmm"));
 		var classT = Number(classTime.replace(/:/g, ''));
 		return now >= classT;
-		/*let times = Object.keys(current).map(function(key) {
-			//return key.replace(/:/g, '');
-			return key;
-		});
-		let _this = this;
-
-		let hidden = Object.keys(current).reduce(function(result, key) {
-			//compare current time to key. if it is less, return
-			var timeBlock = Number(key.replace(/:/g, ''));
-			var currentTime = Number(_this.state.currentTime.replace(/:/g, ''));
-			if (timeBlock <= currentTime) {
-				result.push(key);
-			} 
-			return result;
-		}, [])
-
-		return hidden.map(function(key) {
-			return _this.state.currentClasses[key];
-		});*/
 	}
 
 	render() {

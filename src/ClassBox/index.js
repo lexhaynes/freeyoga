@@ -3,13 +3,11 @@ import './styles.css';
 import moment from 'moment';
 
 export default function ClassBox(props) {
-	const {hidden, title, start, end, teacher, location, hood, coords, url } = props;
-
-	let visibility = hidden == "hidden" ? hidden : "animate " + hidden;
+	const {title, start, end, teacher, location, hood, coords, url } = props;
 
 	let component = 
 		//if the component type is 'today' section
-		<div className={"classbox " + visibility}>
+		<div className={"classbox animate"}>
 	  		<div className="class-title ">{title}</div>
 
 	  		<a href={url} className="class-location" target="blank">{location}</a>
