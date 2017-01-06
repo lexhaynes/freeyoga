@@ -12,8 +12,8 @@ class App extends Component {
       <div className="app">
         <Banner></Banner>
         <ClassesToday data={data} />
-     	<Button className="button-floating top box-shadow">?</Button>	
-		<Button className="button-floating box-shadow">+</Button>	
+     	  <Button className="button-floating top box-shadow">?</Button>	
+		    <Button className="button-floating box-shadow">+</Button>	
       </div>
     );
   }

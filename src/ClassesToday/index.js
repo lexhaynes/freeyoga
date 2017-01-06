@@ -8,8 +8,6 @@ import './styles.css';
 
 var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 var date = new Date();
-var nyTime = moment().tz("America/New_York").format("hh:mm");
-var userTime = moment().format("hh:mm");
 
 class ClassesToday extends Component {
 
@@ -19,9 +17,7 @@ class ClassesToday extends Component {
 	    this.state = {
 	    	currentDay: date.getDay(),
 	      	currentClasses: [],
-	      	currentClassTimes: [],
-	      	currentTime: nyTime,
-	      	userTime: userTime,
+	      	currentClassTimes: []
 	    };
 
 	   	this.displayCurrentClasses = this.displayCurrentClasses.bind(this);
