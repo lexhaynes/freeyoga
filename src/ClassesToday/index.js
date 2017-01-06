@@ -72,7 +72,6 @@ class ClassesToday extends Component {
 		return Object.keys(this.state.currentClasses).map(function(key) {
   			return ([key, _this.state.currentClasses[key].map(function(item) {
   				let isHidden = _this.isClassOver(item.classStart) ? "hidden" : "visible";
-  				console.log('is hidden: ' + isHidden);
 				return (
 					<ClassBox key={item.id}
 						hidden={isHidden}
@@ -154,6 +153,7 @@ class ClassesToday extends Component {
 					<Table
 						className="grid-100 grid-center"
 						data={this.displayCurrentClasses} 
+						isClassOver={this.isClassOver}
 					/>
 				</div>
 

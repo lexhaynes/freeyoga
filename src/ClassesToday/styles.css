@@ -3,6 +3,6 @@
 }
 
 .hidden {
-	display: block;
+	display: none;
 	opacity:0.25;
 }
