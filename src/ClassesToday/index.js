@@ -28,7 +28,7 @@ class ClassesToday extends Component {
 	    this.setCurrentClasses = this.setCurrentClasses.bind(this);
 	    this.nextDay = this.nextDay.bind(this);
 	    this.prevDay = this.prevDay.bind(this);
-	    this.hidePassedClasses = this.hidePassedClasses.bind(this);
+	    this.isClassOver = this.isClassOver.bind(this);
 	}
 
 	componentDidMount() {
@@ -71,8 +71,11 @@ class ClassesToday extends Component {
 		let _this = this;
 		return Object.keys(this.state.currentClasses).map(function(key) {
   			return ([key, _this.state.currentClasses[key].map(function(item) {
+  				let isHidden = _this.isClassOver(item.classStart) ? "hidden" : "visible";
+  				console.log('is hidden: ' + isHidden);
 				return (
 					<ClassBox key={item.id}
+						hidden={isHidden}
 				  		title={item.className}
 				  		start={item.classStart}
 				  		end={item.classEnd}
@@ -103,8 +106,14 @@ class ClassesToday extends Component {
 		this.setCurrentClasses(prevDay);
 	}
 	/*hide classes whose start tines have passed*/
-	hidePassedClasses(current) {
-		let times = Object.keys(current).map(function(key) {
+	isClassOver(classTime) {
+		var now = Number(moment().format("Hmm"));
+		var classT = Number(classTime.replace(/:/g, ''));
+
+		console.log(now >= classT);
+
+		return now >= classT;
+		/*let times = Object.keys(current).map(function(key) {
 			//return key.replace(/:/g, '');
 			return key;
 		});
@@ -122,7 +131,7 @@ class ClassesToday extends Component {
 
 		return hidden.map(function(key) {
 			return _this.state.currentClasses[key];
-		});
+		});*/
 	}
 
 	render() {
@@ -147,7 +156,7 @@ class ClassesToday extends Component {
 				<div className="section-content slider">
 					<Table
 						className="grid-100 grid-center"
-						data={this.displayCurrentClasses}  
+						data={this.displayCurrentClasses} 
 					/>
 				</div>
 
