@@ -8,13 +8,16 @@ export default function Table(props) {
 	let parsed = rendered.map(function(timeslot, i) {
 			
 			let flexBasis = timeslot[1].length > 1 ? "flex-50" : "flex-100";
+			//determine if classbox item child has 'hidden' or 'visible' class
+			//make sure you don't animate hidden timeslots!
+			let isHidden = "visible";
 
 		return (
 			<div className="flex-container row" key={i}>
 				<div className="timeslot">
 					{moment(timeslot[0].replace(/:/g,''), "hmm").format("h:mm a") }
 				</div>
-				<div className="flex-container flex-wrap grid-100">
+				<div className={"flex-container flex-wrap grid-100 " + isHidden}>
 				{	timeslot[1].map(function(item, y) {
 						return <div className={flexBasis} key={y}>{item}</div>
 					})

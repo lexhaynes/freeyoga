@@ -1,3 +1,8 @@
 .title-day {
 	text-transform: capitalize;
 }
+
+.hidden {
+	display: block;
+	opacity:0.25;
+}

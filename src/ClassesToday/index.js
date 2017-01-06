@@ -109,9 +109,6 @@ class ClassesToday extends Component {
 	isClassOver(classTime) {
 		var now = Number(moment().format("Hmm"));
 		var classT = Number(classTime.replace(/:/g, ''));
-
-		console.log(now >= classT);
-
 		return now >= classT;
 		/*let times = Object.keys(current).map(function(key) {
 			//return key.replace(/:/g, '');
