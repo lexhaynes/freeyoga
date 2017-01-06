@@ -33,7 +33,7 @@ export default function Table(props) {
 	});
 	return (
 		<div className={className}>
-			<Button className="flex-container grid-center" onClick={showClasses}>Show Hidden</Button>
+			{/*<Button className="flex-container grid-center" onClick={showClasses}>Show Hidden</Button>*/}
 			{parsed}
 		</div>
 	)
