@@ -129,6 +129,7 @@ class ClassesToday extends Component {
 						className="grid-100 grid-center"
 						data={this.displayCurrentClasses} 
 						isClassOver={this.isClassOver}
+						day={this.state.currentDay}
 					/>
 				</div>
 

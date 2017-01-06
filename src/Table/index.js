@@ -8,13 +8,15 @@ function showClasses() {
 }
 
 export default function Table(props) {
-	const { className, data, isClassOver } = props;
+	const {day, className, data, isClassOver } = props;
+
 	let rendered = data();
+	let today = moment().day();
 
 	let parsed = rendered.map(function(timeslot, i) {
 			
 			let flexBasis = timeslot[1].length > 1 ? "flex-50" : "flex-100";
-			let isHidden = isClassOver(moment(timeslot[0].replace(/:/g,''), "hmm").format("Hmm") ) ? "hidden" : "visible";
+			let isHidden = day == today && isClassOver(moment(timeslot[0].replace(/:/g,''), "hmm").format("Hmm") ) ? "hidden" : "visible";
 
 		return (
 			<div className={"flex-container row " + isHidden} key={i}>
