@@ -9,7 +9,7 @@ export default function Banner(props) {
 	//const { prop1, prop2 } = props;
 	return (
 		<div className="banner">
-			<Nav left={<Logo />} right={<Search />} />
+			<Nav left={<Logo />} right/>
 			<div className="flex-container flex-center">
 			 	<div className="banner-inner grid-90">
 					<div className="banner-title section-title">AFFORDABLE YOGA IN NYC</div>
