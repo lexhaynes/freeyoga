@@ -7,7 +7,7 @@ import './styles.css';
 /* redux imports */
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as SampleActions from '../../actions/sample';
+import * as SampleActions from '../../redux/actions/sample';
 
 class App extends Component {
   render() {

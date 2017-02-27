@@ -1,10 +1,10 @@
 //take all your reducers in this reducers dir and comnbine + export them so store can use.
 import { combineReducers } from 'redux';
-import sample from './sample';
+import SampleReducer from './sample';
 
 
 const rootReducer = combineReducers({
-	sample
+	sample: SampleReducer
 });
 
 export default rootReducer;
