@@ -1,4 +1,5 @@
 import { createStore } from 'redux';
+import initislState from './initialState';
 import rootReducer from './reducers';
 
 export default(initialState) => {
