@@ -17,10 +17,12 @@ class ClassesToday extends Component {
 	    this.state = {
 	    	currentDay: date.getDay(),
 	      	currentClasses: [],
-	      	currentClassTimes: []
+	      	currentClassTimes: [],
+	      	passedClassesAreHidden: true
 	    };
 
 	   	this.displayCurrentClasses = this.displayCurrentClasses.bind(this);
+	   	this.toggleHiddenClasses = this.toggleHiddenClasses.bind(this);
 	    this.setCurrentClasses = this.setCurrentClasses.bind(this);
 	    this.nextDay = this.nextDay.bind(this);
 	    this.prevDay = this.prevDay.bind(this);
@@ -84,6 +86,22 @@ class ClassesToday extends Component {
   		});
 	}
 
+	toggleHiddenClasses() {
+		let hidden = document.getElementsByClassName("row hidden");
+
+		if (this.state.passedClassesAreHidden) {
+			for (let i = 0; i < hidden.length; i++) {
+				hidden[i].classList.add('revealed');
+			}
+
+		} else {
+			for (let i = 0; i < hidden.length; i++) {
+				hidden[i].classList.remove('revealed');
+			}
+		}
+		this.setState({'passedClassesAreHidden': !this.state.passedClassesAreHidden});
+	}
+
 	nextDay() {
 		let nextDay = this.state.currentDay === 6 ? 0 : this.state.currentDay + 1;
 		this.setState({
@@ -100,13 +118,12 @@ class ClassesToday extends Component {
 	}
 	/*hide classes whose start tines have passed*/
 	isClassOver(classTime) {
-		var now = Number(moment().format("Hmm"));
-		var classT = Number(classTime.replace(/:/g, ''));
+		let now = Number(moment().format("Hmm"));
+		let classT = Number(classTime.replace(/:/g, ''));
 		return now >= classT;
 	}
 
 	render() {
-	
 		return (
 			<div className="section today grid-90 grid-center">
 
@@ -120,8 +137,13 @@ class ClassesToday extends Component {
 					<Button className="button-navigation" onClick={this.nextDay}>
 						Tomorrow <span className="fa fa-angle-double-right"></span>
 					</Button>
-
 				</div>
+
+				<div className="section-header grid-75 grid-center flex-container flex-center">
+					<Button className="button-primary" onClick={this.toggleHiddenClasses}>
+						{this.state.passedClassesAreHidden ? 'Show Passed Classes' : 'Hide Passed Classes'}
+					</Button>
+				</div>	
 				
 
 				<div className="section-content slider">

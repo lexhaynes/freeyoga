@@ -3,6 +3,14 @@
 }
 
 .hidden {
-	display: flex;
-	opacity:0.25;
+	display:none;
+	opacity:0;
 }
+
+.revealed {
+	display: flex !important;
+	opacity:0.5;
+}
+	.revealed:hover {
+		opacity:1;
+	}
