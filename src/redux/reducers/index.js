@@ -4,7 +4,7 @@ import ClassesReducer from './classesReducer';
 
 
 const rootReducer = combineReducers({
-	classes: ClassesReducer,
+	classData: ClassesReducer,
 });
 
 export default rootReducer;
