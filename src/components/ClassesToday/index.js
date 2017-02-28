@@ -38,11 +38,6 @@ class ClassesToday extends Component {
 	 * checks props.data for classes happening today and adds them to the state.currentClasses object by time slot
 	*/	
 	setCurrentClasses(currentDay) {
-		// functional syntax equivalent to the above.
-		// ensures we don't get empty values in state.currentClasses array
-	/*	let currentClasses = this.props.data
-			.filter( item => item.day === days[currentDay] )
-			.map( (item, i) => item );*/
 		let currentClasses = {};
 
 		for (let i = 0; i < this.props.data.length; i++) {
@@ -125,12 +120,14 @@ class ClassesToday extends Component {
 
 	render() {
 		//if we're looking at tomorrow or yesterday, no need to show passed classes btn
-		//PICK UP HERE
-		var toggleClassesButton = <div className="section-header grid-75 grid-center flex-container flex-center">
-					<Button className="button-primary" onClick={this.toggleHiddenClasses}>
-						{this.state.passedClassesAreHidden ? 'Show Passed Classes' : 'Hide Passed Classes'}
-					</Button>
-				</div>;
+		var today = date.getDay();
+		console.log(today, this.state.currentDay);
+		var toggleClassesButton = today == this.state.currentDay ? 
+			<div className="section-header grid-75 grid-center flex-container flex-center">
+				<Button className="button-primary" onClick={this.toggleHiddenClasses}>
+					{this.state.passedClassesAreHidden ? 'Show Passed Classes' : 'Hide Passed Classes'}
+				</Button>
+			</div> : '';
 
 		return (
 			<div className="section today grid-90 grid-center">
