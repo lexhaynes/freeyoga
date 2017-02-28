@@ -124,6 +124,14 @@ class ClassesToday extends Component {
 	}
 
 	render() {
+		//if we're looking at tomorrow or yesterday, no need to show passed classes btn
+		//PICK UP HERE
+		var toggleClassesButton = <div className="section-header grid-75 grid-center flex-container flex-center">
+					<Button className="button-primary" onClick={this.toggleHiddenClasses}>
+						{this.state.passedClassesAreHidden ? 'Show Passed Classes' : 'Hide Passed Classes'}
+					</Button>
+				</div>;
+
 		return (
 			<div className="section today grid-90 grid-center">
 
@@ -139,11 +147,7 @@ class ClassesToday extends Component {
 					</Button>
 				</div>
 
-				<div className="section-header grid-75 grid-center flex-container flex-center">
-					<Button className="button-primary" onClick={this.toggleHiddenClasses}>
-						{this.state.passedClassesAreHidden ? 'Show Passed Classes' : 'Hide Passed Classes'}
-					</Button>
-				</div>	
+				{toggleClassesButton}
 				
 
 				<div className="section-content slider">
