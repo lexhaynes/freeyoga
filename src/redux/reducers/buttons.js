@@ -1,3 +1,5 @@
+import { ASK_QUESTION } from '../actions/types'
+
 export default function(state = [], action) {
 	switch(action.type) {
 		case 'askQuestion':
