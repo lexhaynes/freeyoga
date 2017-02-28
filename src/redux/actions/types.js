@@ -1,1 +1,2 @@
-export const ASK_QUESTION = 'ask_question';
+export const ADD_CLASS = 'addClass';
+export const EDIT_CLASS = 'editClass';

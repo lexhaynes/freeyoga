@@ -7,7 +7,7 @@ import './styles.css';
 /* redux imports */
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as ButtonActions from '../../redux/actions/buttons';
+import { addClass } from '../../redux/actions/classes';
 
 class App extends Component {
   render() {
@@ -16,25 +16,28 @@ class App extends Component {
         <Banner />
         <ClassesToday data={data} />
      	  <Button 
-          className="button-floating top box-shadow"
-          onClick={this.props.actions.askQuestion}
-          >?</Button>	
-		    <Button className="button-floating box-shadow">+</Button>	
+          className="button-floating top box-shadow">?</Button>	
+		    <Button 
+          className="button-floating box-shadow"
+          onClick={this.props.actions.addClass}
+          >+</Button>	
       </div>
     );
   }
 }
 
 /* redux */
-function mapStateToProps(state, prop) {
+function mapStateToProps(state) {
   return {
-    sample: state.sample
+    classes: state.classes
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(ButtonActions, dispatch)
+      actions: bindActionCreators({
+        addClass: addClass
+    }, dispatch)
   }
 }
 
